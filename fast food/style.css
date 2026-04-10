@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(94, 88, 88);
+}
+.container{
+    background-color: beige;
+    height: 550px;
+    width: 600px;
+    position: relative;
+    top: 50px;
+    left: 500px;
+}
+h1{
+    padding-top: 20px;
+    text-align: center;
+    color: orange;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container_2{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    margin-top: 15px;
+    /* background-color: beige; */
+}
+#cust_name{
+    margin: 15px 0 0 100px;
+    border: none;
+    border-radius: 20px;
+    font-size: larger;
+    text-align: center;
+}
+#cust_n{
+    margin-left: 20px;
+    font-size: larger;
+}
+#check_btn{
+    margin-left: 200px;
+    height: 30px;
+    width: 100px;
+    background-color: green;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+#disc_btn{
+    height: 40px;
+    width: 150px;
+    border: none;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+    background-color: aqua;
+    margin-left: 150px;
+}
+#disc_msg{
+    margin-left: 150px;
+    width: 400px;
+    border: transparent;
+    background-color: transparent;
+    color: rgb(98, 194, 98);
+    font-size: large;
+    font-weight: bolder;
+    text-align: center;
+}
+#final_btn{
+    margin-left: 150px;
+    height: 50px;
+    width: 100px;
+    border-radius: 50px;
+    font-size: larger;
+    cursor: pointer;
+}
+#menu_cont p{
+    font-size: xx-large;
+}
+#pay{
+    height: 30px;
+    width: 70px;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    left: 500px;
+    bottom: 50px;
+    background-color: #6739B7;
+    cursor: pointer;
+    color: white;
+    font-weight: bo;
+}

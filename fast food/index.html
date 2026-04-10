@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Food Corner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fast Food Corner</h1>
+        <p id="cust_n">Customer Name: <input type="text" id="cust_name"></p>
+
+        <div class="container_2">
+
+        <div class="menu_cont">
+            <p>Vadapav ₹15</p> <br>
+            <p>Sandwich ₹10</p> <br> 
+            <p>Samosa ₹20</p> <br>
+            <p>Ice-cream ₹50</p> <br>
+            <p>Misal ₹25</p>
+        </div>
+
+        <div class="quantity_list">
+            <input type="number" name="" id="i1"> <br> <br>
+            <input type="number" name="" id="i2"> <br> <br>
+            <input type="number" name="" id="i3"> <br> <br> 
+            <input type="number" name="" id="i4"> <br> <br>
+            <input type="number" name="" id="i5"> 
+        </div>
+
+        <button onclick="msg()" id="calculate">Calculate</button>
+
+        <div class="total_list">
+            <input readonly type="number" name="" id="vadapav"> <br> <br>
+            <input readonly type="number" name="" id="sandwich"> <br> <br>
+            <input readonly type="number" name="" id="samosa"> <br> <br> 
+            <input readonly type="number" name="" id="ice"> <br> <br>
+            <input readonly type="number" name="" id="misal"> 
+        </div>
+        </div> <br>
+                    <!-- checkbill -->
+        <button onclick="msg1()" id="check_btn">Check Bill</button>
+        <input type="number" id="amount" readonly> <br> <br>
+                        
+                    <!-- discount price -->
+        <button onclick="msg2()" id="disc_btn">Discount Amount</button> 
+        <input type="number" id="disc_amt" readonly> <br> <br>
+        <input type="text"  id="disc_msg" readonly>  <br> <br>
+
+                    <!-- final Bill -->
+        <button onclick="msg3()" id="final_btn">Final Bill</button>
+        <input type="number" name="" id="final_bill" readonly> <br> <br>
+        <button onclick="msg4()" id="pay">Pay Bill</button>
+    </div>
+</body>
+
+<script>
+    function msg(){
+        // calculation of vadapav
+        var a=parseInt(document.getElementById('i1').value);
+        var cal1 = a*20;
+        document.getElementById('vadapav').value=cal1;
+
+        // calculation of sandwich
+        var b=parseInt(document.getElementById('i2').value);
+        var cal1 = b*10;
+        document.getElementById('sandwich').value=cal1;
+
+        // calculation of samosa
+        var c=parseInt(document.getElementById('i3').value);
+        var cal1 = c*20;
+        document.getElementById('samosa').value=cal1;
+
+        // calculation of ice-cream
+        var d=parseInt(document.getElementById('i4').value);
+        var cal1 = d*50;
+        document.getElementById('ice').value=cal1;
+
+        // calculation of misal
+        var e=parseInt(document.getElementById('i5').value);
+        var cal1 = e*25;
+        document.getElementById('misal').value=cal1;
+    }
+
+    // calculation of total amount
+        function msg1(){
+            var a=parseInt(document.getElementById('vadapav').value);
+            var b=parseInt(document.getElementById('sandwich').value);
+            var c=parseInt(document.getElementById('samosa').value);
+            var d=parseInt(document.getElementById('ice').value);
+            var e=parseInt(document.getElementById('misal').value);
+
+            var add=a+b+c+d+e;
+            document.getElementById('amount').value=add;
+        }
+
+         // discount
+        function msg2(){
+            var name=document.getElementById('cust_name').value;
+            var total=parseInt(document.getElementById('amount').value);
+            var z=10/100*total;
+            var sub=total-z;
+             document.getElementById('disc_amt').value=z;
+
+            if(sub>=1000){
+                 document.getElementById('disc_msg').value="Congratulations "+name+" you got 10% discount";
+            }
+            else{
+               document.getElementById('disc_msg').value="Sorry "+name+" you don't got 10% discount";
+            }
+        }
+
+        // final bill
+        function msg3(){
+            var total=parseInt(document.getElementById('amount').value);
+            var discount=parseInt(document.getElementById('disc_amt').value);
+            var final = total;
+            var z=10/100*total;
+            var sub=total-z;
+            if(sub>=1000){
+            document.getElementById('final_bill').value=sub;
+            }
+            else{
+                document.getElementById('final_bill').value=final;
+            }
+
+        }
+
+        // pay button
+        function msg4(){
+            alert("Your Payment Has Successfully Paid")
+        }
+
+
+</script>
+</html>
